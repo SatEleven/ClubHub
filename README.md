@@ -4,3 +4,5 @@
 - https://www.figma.com/file/iSKrRUeSkVxIrkCXqbbbkn/app0?node-id=0%3A1
 
 - firebase
+
+-https://trello.com/b/YAle4hhN/project0
