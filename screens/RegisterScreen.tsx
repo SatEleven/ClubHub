@@ -1,25 +1,23 @@
 import { FontAwesome } from '@expo/vector-icons';
 import { StackScreenProps } from '@react-navigation/stack';
 import * as React from 'react';
-import { TextInput, useColorScheme } from 'react-native';
+import { TextInput } from 'react-native';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 import { RootStackParamList } from '../types';
 
-export default function LoginScreen({
+export default function RegisterScreen({
   navigation,
-}: StackScreenProps<RootStackParamList, 'Login'>) {
-  const colorScheme = useColorScheme();
+}: StackScreenProps<RootStackParamList, 'Register'>) {
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
+	const [confirmedPassword, setConfirmedPassword] = React.useState('');
 
   return (
     <View style={styles.container}>
-      <FontAwesome
-        name={'firefox'}
-        size={100}
-        style={{ color: '#763089', margin: 20 }}
-      />
+			<View style={styles.titleWrapper}>
+        <Text style={styles.title}>Register</Text>
+      </View>
       <View style={styles.inputsWrapper}>
         <View style={styles.field}>
           <Text style={styles.inputLabel}>Email Address</Text>
@@ -32,21 +30,20 @@ export default function LoginScreen({
           <TextInput style={styles.input} onChangeText={setPassword}>
             {password}
           </TextInput>
-          <View style={styles.forgotPassword}>
-            <TouchableOpacity onPress={() => navigation.push('ForgotPassword')}>
-              <Text style={styles.forgotPasswordMessage}>
-                Forgot your password?
-              </Text>
-            </TouchableOpacity>
-          </View>
+        </View>
+        <View style={styles.field}>
+          <Text style={styles.inputLabel}>Confirm Password</Text>
+          <TextInput style={styles.input} onChangeText={setConfirmedPassword}>
+						{confirmedPassword}
+          </TextInput>
         </View>
         <View style={styles.buttonWrapper}>
           <TouchableOpacity
-            onPress={() => console.log('LOG IN')}
+            onPress={() => navigation.push('ForgotPassword')}
             style={styles.button}
           >
             <Text style={styles.buttonText}>
-              Log in &nbsp;
+              Register &nbsp;
               <FontAwesome
                 name={'sign-in'}
                 size={18}
@@ -54,13 +51,6 @@ export default function LoginScreen({
               />
             </Text>
           </TouchableOpacity>
-          <View style={styles.register}>
-            <TouchableOpacity onPress={() => navigation.push('Register')}>
-              <Text style={styles.registerLink}>
-                Don't have an account yet? Register
-              </Text>
-            </TouchableOpacity>
-          </View>
         </View>
       </View>
     </View>
@@ -75,12 +65,20 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     padding: 20,
   },
+	titleWrapper: {
+    margin: 32,
+    marginBottom: 64,
+  },
+  title: {
+    fontSize: 36,
+    fontWeight: 'bold',
+  },
   inputsWrapper: {
     width: '80%',
-    marginVertical: 40,
+    marginVertical: 10,
   },
   field: {
-    marginVertical: 16,
+    marginVertical: 10,
   },
   inputLabel: {
     fontWeight: 'bold',
@@ -115,7 +113,8 @@ const styles = StyleSheet.create({
     color: 'white',
   },
   register: {
-    marginTop: 24,
+		width: "100%",
+    marginTop: 12,
   },
   registerLink: {
     fontSize: 16,
