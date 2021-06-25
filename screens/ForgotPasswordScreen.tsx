@@ -3,6 +3,7 @@ import { StackScreenProps } from '@react-navigation/stack';
 import * as React from 'react';
 import { TextInput } from 'react-native';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import Button from '../components/Button';
 
 import { RootStackParamList } from '../types';
 
@@ -30,12 +31,11 @@ export default function ForgotPasswordScreen({
         </View>
       </View>
       <View style={styles.buttonWrapper}>
-        <TouchableOpacity
+        <Button
           onPress={() => setButtonContents(CodeSentText)}
-          style={styles.button}
         >
           {buttonContents}
-        </TouchableOpacity>
+        </Button>
       </View>
     </View>
   );
@@ -64,12 +64,6 @@ const styles = StyleSheet.create({
   buttonWrapper: {
     marginTop: 32,
     alignItems: 'center',
-  },
-  button: {
-    backgroundColor: '#763089',
-    paddingVertical: 15,
-    paddingHorizontal: 25,
-    borderRadius: 10,
   },
   buttonText: {
     fontSize: 16,
