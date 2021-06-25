@@ -12,6 +12,7 @@ import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
 import LoginScreen from '../screens/LoginScreen';
 import ForgotPasswordScreen from '../screens/ForgotPasswordScreen';
+import RegisterScreen from '../screens/RegisterScreen';
 import TabOneScreen from '../screens/TabOneScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
 import { BottomTabParamList, TabOneParamList, TabTwoParamList } from '../types';
@@ -70,7 +71,10 @@ function LoginNavigator() {
       <LoginStack.Screen
         name="ForgotPassword"
         component={ForgotPasswordScreen}
-        options={{ headerTitle: 'Forgot Password' }}
+      />
+      <LoginStack.Screen
+        name="Register"
+        component={RegisterScreen}
       />
     </LoginStack.Navigator>
   );
