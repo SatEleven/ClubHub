@@ -60,6 +60,11 @@ export default function LoginScreen({
                 Don't have an account yet? Register
               </Text>
             </TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.push('Loading')}>
+              <Text style={styles.registerLink}>
+                DEBUG: LOADING
+              </Text>
+            </TouchableOpacity>
           </View>
         </View>
       </View>
