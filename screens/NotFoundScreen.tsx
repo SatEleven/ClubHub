@@ -1,7 +1,6 @@
 import { StackScreenProps } from '@react-navigation/stack';
 import * as React from 'react';
-import { StyleSheet, TouchableOpacity, View } from 'react-native';
-import { HeadingText, BodyText } from '../components/StyledText';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 import { RootStackParamList } from '../types';
 
@@ -10,9 +9,9 @@ export default function NotFoundScreen({
 }: StackScreenProps<RootStackParamList, 'NotFound'>) {
   return (
     <View style={styles.container}>
-      <HeadingText style={styles.title}>This screen doesn't exist.</HeadingText>
+      <Text style={styles.title}>This screen doesn't exist.</Text>
       <TouchableOpacity onPress={() => navigation.replace('Root')} style={styles.link}>
-        <BodyText style={styles.linkText}>Go to home screen!</BodyText>
+        <Text style={styles.linkText}>Go to home screen!</Text>
       </TouchableOpacity>
     </View>
   );
