@@ -10,9 +10,6 @@ export default function LoginScreen({
   navigation,
 }: StackScreenProps<RootStackParamList, 'Login'>) {
   const colorScheme = useColorScheme();
-  const [email, setEmail] = React.useState('');
-  const [password, setPassword] = React.useState('');
-
   return (
     <View style={styles.container}>
       <FontAwesome
@@ -23,15 +20,11 @@ export default function LoginScreen({
       <View style={styles.inputsWrapper}>
         <View style={styles.field}>
           <Text style={styles.inputLabel}>Email Address</Text>
-          <TextInput style={styles.input} onChangeText={setEmail}>
-            {email}
-          </TextInput>
+          <TextInput style={styles.input}></TextInput>
         </View>
         <View style={styles.field}>
           <Text style={styles.inputLabel}>Password</Text>
-          <TextInput style={styles.input} onChangeText={setPassword}>
-            {password}
-          </TextInput>
+          <TextInput style={styles.input}></TextInput>
           <View style={styles.forgotPassword}>
             <TouchableOpacity onPress={() => navigation.push('ForgotPassword')}>
               <Text style={styles.forgotPasswordMessage}>
@@ -42,11 +35,11 @@ export default function LoginScreen({
         </View>
         <View style={styles.buttonWrapper}>
           <TouchableOpacity
-            onPress={() => console.log('LOG IN')}
+            onPress={() => navigation.push('ForgotPassword')}
             style={styles.button}
           >
             <Text style={styles.buttonText}>
-              Log in &nbsp;
+              Login &nbsp;
               <FontAwesome
                 name={'sign-in'}
                 size={18}
@@ -54,13 +47,6 @@ export default function LoginScreen({
               />
             </Text>
           </TouchableOpacity>
-          <View style={styles.register}>
-            <TouchableOpacity onPress={() => navigation.push('Register')}>
-              <Text style={styles.registerLink}>
-                Don't have an account yet? Register
-              </Text>
-            </TouchableOpacity>
-          </View>
         </View>
       </View>
     </View>
@@ -74,24 +60,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     padding: 20,
-  },
-  inputsWrapper: {
-    width: '80%',
-    marginVertical: 40,
-  },
-  field: {
-    marginVertical: 16,
-  },
-  inputLabel: {
-    fontWeight: 'bold',
-    fontSize: 18,
-  },
-  input: {
-    borderWidth: 1,
-    borderRadius: 10,
-    borderColor: '#763089',
-    padding: 8,
-    marginVertical: 4,
   },
   forgotPassword: {
     alignItems: 'flex-end',
@@ -114,11 +82,22 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: 'white',
   },
-  register: {
-    marginTop: 24,
+  inputsWrapper: {
+    width: '80%',
+    marginVertical: 40,
   },
-  registerLink: {
-    fontSize: 16,
-    textDecorationLine: 'underline',
+  field: {
+    marginVertical: 16,
+  },
+  inputLabel: {
+    fontWeight: 'bold',
+    fontSize: 18,
+  },
+  input: {
+    borderWidth: 1,
+    borderRadius: 10,
+    borderColor: '#763089',
+    padding: 8,
+    marginVertical: 4,
   },
 });
