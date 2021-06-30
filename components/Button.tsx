@@ -8,19 +8,21 @@ import {
 } from 'react-native';
 
 interface Props {
-  children?: JSX.Element | JSX.Element[];
-  onPress?: (event: GestureResponderEvent) => void;
+	children?: JSX.Element|JSX.Element[];
+  onPress?: (event: GestureResponderEvent) => void,
 }
 
 /**
  * Custom styled Button component for ClubHub
  */
-export default function Button(props: Props) {
-  return (
-    <TouchableOpacity onPress={props.onPress} style={styles.button}>
-      {props.children}
-    </TouchableOpacity>
-  );
+export default function Button(
+	props: Props,
+) {
+	return (
+  	<TouchableOpacity onPress={props.onPress} style={styles.button}>
+			{props.children}
+  	</TouchableOpacity>
+	);
 }
 
 const styles = StyleSheet.create({
