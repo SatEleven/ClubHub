@@ -2,7 +2,8 @@ import { FontAwesome } from '@expo/vector-icons';
 import { StackScreenProps } from '@react-navigation/stack';
 import * as React from 'react';
 import { TextInput } from 'react-native';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+import { BodyText, HeadingText } from '../components/StyledText';
 import Button from '../components/Button';
 
 import { RootStackParamList } from '../types';
@@ -16,24 +17,22 @@ export default function ForgotPasswordScreen({
   return (
     <View style={styles.container}>
       <View style={styles.titleWrapper}>
-        <Text style={styles.title}>Forgot Password</Text>
-        <Text>
+        <HeadingText style={styles.title}>Forgot Password</HeadingText>
+        <BodyText>
           We can help you reset your access. Enter your university email address
           and we will send you a security code to verify your access.
-        </Text>
+        </BodyText>
       </View>
       <View style={styles.inputsWrapper}>
         <View style={styles.field}>
-          <Text style={styles.inputLabel}>Email Address</Text>
+          <BodyText style={styles.inputLabel}>Email Address</BodyText>
           <TextInput style={styles.input} onChangeText={setEmail}>
             {email}
           </TextInput>
         </View>
       </View>
       <View style={styles.buttonWrapper}>
-        <Button
-          onPress={() => setButtonContents(CodeSentText)}
-        >
+        <Button onPress={() => setButtonContents(CodeSentText)}>
           {buttonContents}
         </Button>
       </View>
@@ -88,11 +87,17 @@ const styles = StyleSheet.create({
   },
 });
 
+/**
+ * Text to display before user clicks 'Send Code'
+ */
 const SendCodeText = (
-  <Text style={styles.buttonText}>
+  <BodyText style={styles.buttonText}>
     Send code &nbsp;
     <FontAwesome name={'envelope'} size={18} style={{ color: 'white' }} />
-  </Text>
+  </BodyText>
 );
 
-const CodeSentText = <Text style={styles.buttonText}>Code sent!</Text>;
+/**
+ * Text to display after user clicks 'Send Code'
+ */
+const CodeSentText = <BodyText style={styles.buttonText}>Code sent!</BodyText>;

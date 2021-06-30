@@ -2,7 +2,8 @@ import { FontAwesome } from '@expo/vector-icons';
 import { StackScreenProps } from '@react-navigation/stack';
 import * as React from 'react';
 import { TextInput, useColorScheme } from 'react-native';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, TouchableOpacity, View } from 'react-native';
+import { BodyText, HeadingText } from '../components/StyledText';
 import Button from '../components/Button';
 
 import { RootStackParamList } from '../types';
@@ -23,21 +24,21 @@ export default function LoginScreen({
       />
       <View style={styles.inputsWrapper}>
         <View style={styles.field}>
-          <Text style={styles.inputLabel}>Email Address</Text>
+          <BodyText style={styles.inputLabel}>Email Address</BodyText>
           <TextInput style={styles.input} onChangeText={setEmail}>
             {email}
           </TextInput>
         </View>
         <View style={styles.field}>
-          <Text style={styles.inputLabel}>Password</Text>
+          <BodyText style={styles.inputLabel}>Password</BodyText>
           <TextInput style={styles.input} onChangeText={setPassword}>
             {password}
           </TextInput>
           <View style={styles.forgotPassword}>
             <TouchableOpacity onPress={() => navigation.push('ForgotPassword')}>
-              <Text style={styles.forgotPasswordMessage}>
+              <BodyText style={styles.forgotPasswordMessage}>
                 Forgot your password?
-              </Text>
+              </BodyText>
             </TouchableOpacity>
           </View>
         </View>
@@ -45,25 +46,25 @@ export default function LoginScreen({
           <Button
             onPress={() => console.log('LOG IN')}
           >
-            <Text style={styles.buttonText}>
+            <BodyText style={styles.buttonText}>
               Log in &nbsp;
               <FontAwesome
                 name={'sign-in'}
                 size={18}
                 style={{ color: 'white' }}
               />
-            </Text>
+            </BodyText>
           </Button>
           <View style={styles.register}>
             <TouchableOpacity onPress={() => navigation.push('Register')}>
-              <Text style={styles.registerLink}>
+              <BodyText style={styles.registerLink}>
                 Don't have an account yet? Register
-              </Text>
+              </BodyText>
             </TouchableOpacity>
             <TouchableOpacity onPress={() => navigation.push('Loading')}>
-              <Text style={styles.registerLink}>
+              <BodyText style={styles.registerLink}>
                 DEBUG: LOADING
-              </Text>
+              </BodyText>
             </TouchableOpacity>
           </View>
         </View>

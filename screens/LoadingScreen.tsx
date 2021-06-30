@@ -1,9 +1,8 @@
 import { FontAwesome } from '@expo/vector-icons';
 import { StackScreenProps } from '@react-navigation/stack';
 import * as React from 'react';
-import { TextInput, useColorScheme } from 'react-native';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import Button from '../components/Button';
+import { StyleSheet, View } from 'react-native';
+import { HeadingText } from '../components/StyledText';
 
 import { RootStackParamList } from '../types';
 
@@ -17,9 +16,9 @@ export default function LoadingScreen({
         size={100}
         style={{ color: '#fff', margin: 20 }}
       />
-			<Text style={styles.logoText}>
+			<HeadingText style={styles.logoText}>
 				ClubHub
-			</Text>
+			</HeadingText>
     </View>
   );
 }
