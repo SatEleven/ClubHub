@@ -13,6 +13,7 @@ import useColorScheme from '../hooks/useColorScheme';
 import LoginScreen from '../screens/LoginScreen';
 import ForgotPasswordScreen from '../screens/ForgotPasswordScreen';
 import RegisterScreen from '../screens/RegisterScreen';
+import LoadingScreen from '../screens/LoadingScreen';
 import TabOneScreen from '../screens/TabOneScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
 import { BottomTabParamList, TabOneParamList, TabTwoParamList } from '../types';
@@ -72,10 +73,8 @@ function LoginNavigator() {
         name="ForgotPassword"
         component={ForgotPasswordScreen}
       />
-      <LoginStack.Screen
-        name="Register"
-        component={RegisterScreen}
-      />
+      <LoginStack.Screen name="Register" component={RegisterScreen} />
+      <LoginStack.Screen name="Loading" component={LoadingScreen} />
     </LoginStack.Navigator>
   );
 }
