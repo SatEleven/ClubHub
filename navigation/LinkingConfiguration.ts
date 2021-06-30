@@ -13,34 +13,13 @@ export default {
       Root: {
         screens: {
           TabOne: {
-            TabOneScreen: 'one',
+            screens: {
+              TabOneScreen: 'one',
+            },
           },
           TabTwo: {
-            TabTwoScreen: 'two',
-          },
-          Home: {
             screens: {
-              HomePageScreen: 'one',
-            },
-          },
-          Search: {
-            screens: {
-              SearchPageScreen: 'two',
-            },
-          },
-          MyClubs: {
-            screens: {
-              MyClubsPageScreen: 'one',
-            },
-          },
-          Notifications: {
-            screens: {
-              NotificationsPageScreen: 'one',
-            },
-          },
-          Account: {
-            screens: {
-              AccountPageScreen: 'one',
+              TabTwoScreen: 'two',
             },
           },
         },
