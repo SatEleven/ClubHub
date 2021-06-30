@@ -3,7 +3,6 @@ import { StackScreenProps } from '@react-navigation/stack';
 import * as React from 'react';
 import { TextInput, useColorScheme } from 'react-native';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import Button from '../components/Button';
 
 import { RootStackParamList } from '../types';
 
@@ -42,8 +41,9 @@ export default function LoginScreen({
           </View>
         </View>
         <View style={styles.buttonWrapper}>
-          <Button
+          <TouchableOpacity
             onPress={() => console.log('LOG IN')}
+            style={styles.button}
           >
             <Text style={styles.buttonText}>
               Log in &nbsp;
@@ -53,7 +53,7 @@ export default function LoginScreen({
                 style={{ color: 'white' }}
               />
             </Text>
-          </Button>
+          </TouchableOpacity>
           <View style={styles.register}>
             <TouchableOpacity onPress={() => navigation.push('Register')}>
               <Text style={styles.registerLink}>
@@ -103,6 +103,12 @@ const styles = StyleSheet.create({
   buttonWrapper: {
     marginVertical: 16,
     alignItems: 'center',
+  },
+  button: {
+    backgroundColor: '#763089',
+    paddingVertical: 15,
+    paddingHorizontal: 25,
+    borderRadius: 10,
   },
   buttonText: {
     fontSize: 16,

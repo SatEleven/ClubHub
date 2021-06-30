@@ -3,7 +3,6 @@ import { StackScreenProps } from '@react-navigation/stack';
 import * as React from 'react';
 import { TextInput } from 'react-native';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import Button from '../components/Button';
 
 import { RootStackParamList } from '../types';
 
@@ -39,9 +38,10 @@ export default function RegisterScreen({
           </TextInput>
         </View>
         <View style={styles.buttonWrapper}>
-					<Button
-						onPress={() => navigation.push('ForgotPassword')}
-					>
+          <TouchableOpacity
+            onPress={() => navigation.push('ForgotPassword')}
+            style={styles.button}
+          >
             <Text style={styles.buttonText}>
               Register &nbsp;
               <FontAwesome
@@ -50,7 +50,7 @@ export default function RegisterScreen({
                 style={{ color: 'white' }}
               />
             </Text>
-					</Button>
+          </TouchableOpacity>
         </View>
       </View>
     </View>
