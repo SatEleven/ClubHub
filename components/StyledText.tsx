@@ -1,7 +1,24 @@
 import * as React from 'react';
 
-import { Text, TextProps } from './Themed';
+import { Text as StyledText, TextProps } from './Themed';
 
 export function MonoText(props: TextProps) {
-  return <Text {...props} style={[props.style, { fontFamily: 'space-mono' }]} />;
+  return (
+    <StyledText
+      {...props}
+      style={[props.style, { fontFamily: 'space-mono' }]}
+    />
+  );
+}
+
+export function BodyText(props: TextProps) {
+  return (
+    <StyledText {...props} style={[props.style, { fontFamily: 'roboto' }]} />
+  );
+}
+
+export function HeaderText(props: TextProps) {
+  return (
+    <StyledText {...props} style={[props.style, { fontFamily: 'lato' }]} />
+  );
 }
